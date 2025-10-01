@@ -50,93 +50,138 @@ Smart-Health-Monitoring-System/
 from flask import Flask, render_template
 import random
 
+from flask import Flask, render_template_string
+import random
+import time
+
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    health_data = {
-        "heart_rate": random.randint(60, 100),
-        "temperature": round(random.uniform(36.5, 37.5), 1),
-        "spo2": random.randint(92, 100)
-    }
-    return render_template("index.html", data=health_data)
+# ---------------------------
+# HTML + CSS directly in one file (using render_template_string)
+# ---------------------------
 
-if __name__ == "__main__":
-    app.run(debug=True)
+html_code = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Health Monitoring</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Smart Health Monitoring System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .value {
+            font-size: 2em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .unit {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+    <script>
+        async function fetchData() {
+            const response = await fetch('/data');
+            const data = await response.json();
+            document.getElementById('heart').innerText = data.heart_rate + " bpm";
+            document.getElementById('temp').innerText = data.temperature + " °C";
+            document.getElementById('spo2').innerText = data.spo2 + " %";
+
+            // Alerts
+            document.getElementById('heart_alert').innerText = 
+                (data.heart_rate < 60 || data.heart_rate > 100) ? "⚠️ Abnormal Heart Rate!" : "";
+            document.getElementById('temp_alert').innerText = 
+                (data.temperature < 36 || data.temperature > 38) ? "⚠️ Abnormal Temperature!" : "";
+            document.getElementById('spo2_alert').innerText = 
+                (data.spo2 < 95) ? "⚠️ Low SpO₂ Level!" : "";
+        }
+        setInterval(fetchData, 2000);
+        window.onload = fetchData;
+    </script>
 </head>
 <body>
+    <h1>🩺 Smart Health Monitoring Dashboard</h1>
     <div class="container">
-        <h1>🩺 Smart Health Monitoring Dashboard</h1>
         <div class="card">
-            <p>❤️ Heart Rate: <strong>{{ data.heart_rate }} bpm</strong></p>
-            <p>🌡️ Temperature: <strong>{{ data.temperature }} °C</strong></p>
-            <p>🌬️ SpO2: <strong>{{ data.spo2 }} %</strong></p>
+            <h2>❤️ Heart Rate</h2>
+            <div id="heart" class="value">--</div>
+            <div class="unit">bpm</div>
+            <div id="heart_alert" class="alert"></div>
+        </div>
+        <div class="card">
+            <h2>🌡️ Temperature</h2>
+            <div id="temp" class="value">--</div>
+            <div class="unit">°C</div>
+            <div id="temp_alert" class="alert"></div>
+        </div>
+        <div class="card">
+            <h2>🌬️ SpO₂</h2>
+            <div id="spo2" class="value">--</div>
+            <div class="unit">%</div>
+            <div id="spo2_alert" class="alert"></div>
         </div>
     </div>
 </body>
 </html>
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+"""
 
-.container {
-    text-align: center;
-}
+# ---------------------------
+# Routes
+# ---------------------------
 
-h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
+@app.route('/')
+def home():
+    return render_template_string(html_code)
 
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: inline-block;
-}
-flask
-venv/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.db
-*.sqlite3
-.env
-.DS_Store
-MIT License
+@app.route('/data')
+def data():
+    # Simulated sensor values (you can replace with actual IoT input later)
+    heart_rate = random.randint(55, 110)
+    temperature = round(random.uniform(35.5, 38.5), 1)
+    spo2 = random.randint(90, 100)
 
-Copyright (c) 2025 Ayan Tyagi
+    return {
+        "heart_rate": heart_rate,
+        "temperature": temperature,
+        "spo2": spo2
+    }
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+# ---------------------------
+# Run
+# ---------------------------
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
-python -m venv venv
-source venv/bin/activate    # Mac/Linux
-venv\Scripts\activate       # Windows
-pip install -r requirements.txt
-python app.py
-
+if __name__ == "__main__":
+    app.run(debug=True)
