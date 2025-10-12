@@ -28,12 +28,12 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 ## 📂 Folder Structure  
 ```bash
 Smart-Health-Monitoring/
-│── static/              # CSS, JS, Images
-│── templates/           # HTML Templates
-│── sensors/             # Sensor Data Scripts             
-│── app.py               # Main Backend (Flask/Django)         
-│── requirements.txt     # Dependencies      
-│── README.md            # Project Documentation
+│── static/              # CSS, JS, Images                      
+│── templates/           # HTML Templates            
+│── sensors/             # Sensor Data Scripts                        
+│── app.py               # Main Backend (Flask/Django)                    
+│── requirements.txt     # Dependencies                   
+│── README.md            # Project Documentation                     
 Smart-Health-Monitoring-System/
 │── app.py
 │── requirements.txt
