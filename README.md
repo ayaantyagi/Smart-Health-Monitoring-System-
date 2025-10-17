@@ -15,7 +15,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 
 ---
 
-## 🛠️ Tech Stack  
+## 🛠️ Tech Stack   
 - **Hardware:** Arduino / Raspberry Pi, Sensors (Pulse, Temperature, SpO2)  
 - **Backend:** Python (Flask/Django)  
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap  
