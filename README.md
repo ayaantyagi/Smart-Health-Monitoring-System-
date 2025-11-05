@@ -34,7 +34,7 @@ Smart-Health-Monitoring/
 │── app.py               # Main Backend (Flask/Django)                    
 │── requirements.txt     # Dependencies                   
 │── README.md            # Project Documentation                     
-Smart-Health-Monitoring-System/
+Smart-Health-Monitoring-System/  
 │── app.py
 │── requirements.txt
 │── .gitignore
