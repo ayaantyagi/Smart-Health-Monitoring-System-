@@ -13,7 +13,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 - 🔔 Alerts for Abnormal Readings  
 - ☁️ Data Storage for Historical Analysis  
 
----
+---   
 
 ## 🛠️ Tech Stack   
 - **Hardware:** Arduino / Raspberry Pi, Sensors (Pulse, Temperature, SpO2)  
