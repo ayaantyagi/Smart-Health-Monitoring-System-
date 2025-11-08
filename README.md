@@ -1,10 +1,10 @@
 # 🩺 Smart Health Monitoring System  
 
 ## 📌 Overview  
-The **Smart Health Monitoring System** is an IoT-based application that continuously monitors vital health parameters such as **heart rate, body temperature, and oxygen levels (SpO2)**. The system uses sensors to collect data and displays it in a **real-time web dashboard** for patients and doctors to track.  
-
----
+The **Smart Health Monitoring System** is an IoT-based application that continuously monitors vital health parameters such as **heart rate, body temperature, and oxygen levels (SpO2)**. The system uses sensors to collect data and displays it in a **real-time web dashboard** for patients and doctors to track.   
  
+---
+  
 ## 🎯 Features    
 - ❤️ Real-time Heart Rate Monitoring  
 - 🌡️ Body Temperature Tracking    
