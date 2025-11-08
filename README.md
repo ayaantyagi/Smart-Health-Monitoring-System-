@@ -105,7 +105,7 @@ html_code = """
         .alert {
             color: red;
             font-weight: bold;
-        }
+        }  
         .container {
             display: flex;
             justify-content: center;
