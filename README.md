@@ -29,7 +29,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 ```bash 
 Smart-Health-Monitoring/
 │── static/              # CSS, JS, Images                      
-│── templates/           # HTML Templates            
+│── templates/           # HTML Templates             
 │── sensors/             # Sensor Data Scripts                        
 │── app.py               # Main Backend (Flask/Django)                    
 │── requirements.txt     # Dependencies                   
