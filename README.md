@@ -24,7 +24,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 - **Version Control:** Git, GitHub   
 
 ---
-
+ 
 ## 📂 Folder Structure  
 ```bash 
 Smart-Health-Monitoring/
