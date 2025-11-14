@@ -21,7 +21,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap  
 - **Database:** Firebase / MySQL  
 - **APIs/Tools:** Chart.js, OpenCV (if face detection used)  
-- **Version Control:** Git, GitHub  
+- **Version Control:** Git, GitHub   
 
 ---
 
