@@ -25,7 +25,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 
 ---
  
-## 📂 Folder Structure  
+## 📂 Folder Structure   
 ```bash 
 Smart-Health-Monitoring/
 │── static/              # CSS, JS, Images                      
