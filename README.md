@@ -88,7 +88,7 @@ html_code = """
             margin: 20px auto;
             width: 300px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            transition: 0.3s; 
         }
         .card:hover {
             transform: scale(1.05);
