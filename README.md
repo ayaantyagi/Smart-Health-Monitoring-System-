@@ -58,7 +58,7 @@ app = Flask(__name__)
 
 # ---------------------------
 # HTML + CSS directly in one file (using render_template_string)
-# ---------------------------
+# --------------------------- 
 
 html_code = """
 <!DOCTYPE html>
