@@ -5,7 +5,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
  
 --- 
    
-## 🎯 Features    
+## 🎯 Features      
 - ❤️ Real-time Heart Rate Monitoring  
 - 🌡️ Body Temperature Tracking    
 - 🌬️ SpO2 (Oxygen Level) Measurement     
