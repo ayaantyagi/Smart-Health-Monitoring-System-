@@ -19,7 +19,7 @@ The **Smart Health Monitoring System** is an IoT-based application that continuo
 - **Hardware:** Arduino / Raspberry Pi, Sensors (Pulse, Temperature, SpO2)  
 - **Backend:** Python (Flask/Django)  
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap  
-- **Database:** Firebase / MySQL  
+- **Database:** Firebase / MySQL   
 - **APIs/Tools:** Chart.js, OpenCV (if face detection used)  
 - **Version Control:** Git, GitHub   
 
