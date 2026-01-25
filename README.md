@@ -143,7 +143,7 @@ html_code = """
         </div>
         <div class="card">
             <h2>🌡️ Temperature</h2>
-            <div id="temp" class="value">--</div>
+            <div id="temp" class="value">--</div> 
             <div class="unit">°C</div>
             <div id="temp_alert" class="alert"></div>
         </div>
