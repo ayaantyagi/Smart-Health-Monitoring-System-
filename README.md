@@ -135,7 +135,7 @@ html_code = """
 <body>
     <h1>🩺 Smart Health Monitoring Dashboard</h1>
     <div class="container">
-        <div class="card">
+        <div class="card">  
             <h2>❤️ Heart Rate</h2>
             <div id="heart" class="value">--</div>
             <div class="unit">bpm</div>
